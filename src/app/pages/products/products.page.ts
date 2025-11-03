@@ -2,18 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { RouterLink } from '@angular/router';
-import {
-  IonSpinner,
-  IonCard,
-  IonCardHeader,
-  IonCardTitle,
-  IonCardSubtitle,
-  IonCardContent,
-  IonButton,
-} from '@ionic/angular/standalone';
 import { ProductService } from '../../services/product.service';
 import { LoopOfDirective } from 'src/app/diretivas/loop.directive';
-/* import { HighlightCardDirective } from 'src/app/diretivas/highlight-card.directive'; */
+import { HighlightCardDirective } from 'src/app/diretivas/highlight-card.directive';
+import { PriceColorDirective } from 'src/app/diretivas/price-color.directive';
 
 interface Product {
   id: number;
@@ -32,7 +24,8 @@ interface Product {
     IonicModule,
     RouterLink,
     LoopOfDirective,
-    /* HighlightCardDirective, */
+    HighlightCardDirective,
+    PriceColorDirective,
   ],
   templateUrl: './products.page.html',
   styleUrls: ['./products.page.scss'],

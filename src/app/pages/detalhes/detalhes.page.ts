@@ -1,9 +1,23 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar, IonSpinner, IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle, IonCardContent, IonText, IonImg } from '@ionic/angular/standalone';
+import {
+  IonContent,
+  IonHeader,
+  IonTitle,
+  IonToolbar,
+  IonSpinner,
+  IonCard,
+  IonCardHeader,
+  IonCardTitle,
+  IonCardSubtitle,
+  IonCardContent,
+  IonText,
+  IonImg,
+} from '@ionic/angular/standalone';
 import { ActivatedRoute } from '@angular/router';
 import { ProductService } from '../../services/product.service';
+import { PriceColorDirective } from 'src/app/diretivas/price-color.directive';
 
 interface Product {
   id: number;
@@ -33,8 +47,9 @@ interface Product {
     IonText,
     IonImg,
     CommonModule,
-    FormsModule
-  ]
+    FormsModule,
+    PriceColorDirective,
+  ],
 })
 export class DetalhesPage implements OnInit {
   product?: Product;
@@ -44,7 +59,7 @@ export class DetalhesPage implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private productService: ProductService
-  ) { }
+  ) {}
 
   ngOnInit() {
     this.loadProduct();
@@ -63,9 +78,8 @@ export class DetalhesPage implements OnInit {
           this.error = 'Erro ao carregar produto: ' + err.message;
           this.loading = false;
           console.error('Erro ao carregar produto:', err);
-        }
+        },
       });
     }
   }
-
 }
