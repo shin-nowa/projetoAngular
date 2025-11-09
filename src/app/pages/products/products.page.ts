@@ -6,6 +6,7 @@ import { ProductService } from '../../services/product.service';
 import { LoopOfDirective } from 'src/app/diretivas/loop.directive';
 import { HighlightCardDirective } from 'src/app/diretivas/highlight-card.directive';
 import { PriceColorDirective } from 'src/app/diretivas/price-color.directive';
+import { RatingStarsPipe } from "../../pipes/rating-stars-pipe";
 
 interface Product {
   id: number;
@@ -14,6 +15,10 @@ interface Product {
   description: string;
   category: string;
   image: string;
+  rating: {
+    rate: number;
+    count: number;
+  }
 }
 
 @Component({
@@ -26,7 +31,8 @@ interface Product {
     LoopOfDirective,
     HighlightCardDirective,
     PriceColorDirective,
-  ],
+    RatingStarsPipe
+],
   templateUrl: './products.page.html',
   styleUrls: ['./products.page.scss'],
 })
@@ -45,6 +51,7 @@ export class ProductsPage implements OnInit {
     this.loading = true;
     this.productService.getProducts().subscribe({
       next: (res: any) => {
+        console.log('api retorna:', res);
         this.products = res;
         this.loading = false;
       },
