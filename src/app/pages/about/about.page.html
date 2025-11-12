@@ -1,49 +1,58 @@
 <ion-content class="about-content">
-  <section class="about-header">
-    <h1>Sobre a <span>Tende Tudo</span></h1>
-    <p>Conectando você aos melhores produtos desde 2015.</p>
-  </section>
+  <div class="about-container">
+    <section class="about-header">
+      <h1>Sobre a <span>Tende Tudo</span></h1>
+      <p>Conectando você aos melhores produtos desde 2015.</p>
+    </section>
 
-  <section class="about-body">
-    <h2>Nossa História</h2>
-    <p>
-      A <strong>Tende Tudo</strong> nasceu com o propósito de transformar a forma como as pessoas compram online.
-      Fundada em 2015, começou como uma pequena loja digital de eletrônicos e hoje é um dos maiores
-      marketplaces do Brasil, oferecendo produtos de diversas categorias — tecnologia, moda, decoração, beleza
-      e muito mais.
-    </p>
+    <!-- Grid com 3 cards principais -->
+    <div class="cards-grid">
+      <!-- Card 1: Nossa História -->
+      <div class="about-card">
+        <h2>Nossa História</h2>
+        <p>
+          A <strong>Tende Tudo</strong> nasceu com o propósito de transformar a forma como as pessoas compram online.
+          Fundada em 2015, começou como uma pequena loja digital de eletrônicos e hoje é um dos maiores
+          marketplaces do Brasil.
+        </p>
+        <p>
+          Desde o início, buscamos unir inovação, confiança e praticidade para uma experiência simples, rápida e segura.
+        </p>
+      </div>
 
-    <p>
-      Desde o início, buscamos unir inovação, confiança e praticidade para que nossos clientes tenham
-      uma experiência de compra simples, rápida e segura.
-    </p>
+      <!-- Card 2: Missão, Visão e Valores -->
+      <div class="about-card">
+        <h2>Missão, Visão e Valores</h2>
+        <ul>
+          <li><strong>Missão:</strong> Facilitar o acesso a produtos de qualidade com preços justos e entrega rápida.</li>
+          <li><strong>Visão:</strong> Ser o marketplace mais confiável da América Latina.</li>
+          <li><strong>Valores:</strong> Ética, transparência, respeito e inovação.</li>
+        </ul>
+      </div>
 
-    <h2>Missão, Visão e Valores</h2>
-    <ul>
-      <li><strong>Missão:</strong> Facilitar o acesso a produtos de qualidade com preços justos e entrega rápida.</li>
-      <li><strong>Visão:</strong> Ser o marketplace mais confiável e acessível da América Latina.</li>
-      <li><strong>Valores:</strong> Ética, transparência, respeito e inovação.</li>
-    </ul>
+      <!-- Card 3: Nosso Compromisso -->
+      <div class="about-card">
+        <h2>Nosso Compromisso</h2>
+        <p>
+          Acreditamos que tecnologia e atendimento humano caminham lado a lado. Por isso,
+          oferecemos suporte dedicado, parcerias com marcas de confiança e ferramentas seguras de pagamento.
+        </p>
+      </div>
+    </div>
 
-    <h2>Nosso Compromisso</h2>
-    <p>
-      Na Tende Tudo, acreditamos que tecnologia e atendimento humano caminham lado a lado. Por isso,
-      oferecemos suporte dedicado, parcerias com marcas de confiança e ferramentas seguras de pagamento.
-    </p>
+    <!-- Card 4: Hoje (abaixo, em largura total) -->
+    <div class="about-card full-width-card">
+      <h2>Tende Tudo: Sua Loja de Confiança.</h2>
+      <p id="Atualmente">
+        Atualmente, atendemos milhares de clientes todos os meses e seguimos crescendo com um objetivo claro: continuar oferecendo o que há de melhor em variedade, confiança e agilidade. Nossa missão é garantir que você encontre Tudo o que precisa, com a qualidade e a rapidez que o seu dia a dia exige. Venha fazer parte da nossa história de sucesso e descubra como facilitamos suas compras hoje!
+      </p>
+    </div>
 
-    <h2>Hoje</h2>
-    <p>
-      Atualmente, atendemos milhares de clientes todos os meses e seguimos crescendo com um objetivo claro:
-      continuar oferecendo o que há de melhor em variedade, confiança e agilidade.
-    </p>
-  </section>
-
-  <section class="about-footer">
-    <ion-button class="cta-button" routerLink="/contact">
-  Entre em contato
-</ion-button>
-  </section>
+    <!-- Botão CTA -->
+    <div class="about-footer">
+      <ion-button class="cta-button" routerLink="/contact" fill="outline">
+        Entre em contato
+      </ion-button>
+    </div>
+  </div>
 </ion-content>
-
-
-

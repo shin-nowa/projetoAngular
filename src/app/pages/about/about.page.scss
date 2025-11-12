@@ -1,60 +1,117 @@
 .about-content {
-  padding: 2rem;
-  background-color: #0a1a2f;
-  color: #e6e6e6;
-  line-height: 1.7;
+  --background: #121212;
+  --color: #f0f0f0;
+  padding: 0;
+}
+
+.about-container {
+  padding: 24px 16px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .about-header {
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 32px;
 }
 
 .about-header h1 {
-  font-size: 2rem;
-  color: #0059ff;
+  font-size: 2.2rem;
+  margin-bottom: 12px;
+  color: #4da6ff;
 }
 
-.about-header span {
-  color: #00b7ff;
+.about-header h1 span {
+  color: #ffffff;
+  font-weight: 700;
 }
 
-.about-body {
-  max-width: 800px;
-  margin: 0 auto;
+.about-header p {
+  font-size: 1.1rem;
+  color: #c0c0c0;
 }
 
-.about-body h2 {
-  color: #0059ff;
-  margin-top: 1.8rem;
-  margin-bottom: 0.8rem;
-  font-size: 1.3rem;
+/* Grid dos 3 cards */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 24px;
 }
 
-.about-body p {
-  color: #e6e6e6 !important;
+/* Estilo base dos cards */
+.about-card {
+  background: #1e1e1e;
+  border: 1px solid #2a2a2a;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.about-body ul {
-  list-style: disc;
-  padding-left: 25px;
-  color: #e6e6e6 !important;
+.about-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
 }
 
-.about-body li {
-  list-style: none;
-  margin-bottom: 0.5rem;
-  color: #e6e6e6 !important;
+.about-card h2 {
+  font-size: 1.4rem;
+  margin-bottom: 16px;
+  color: #4da6ff;
 }
 
-.about-body li strong {
-  color: #0059ff;
+.about-card p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #e0e0e0;
+  margin-bottom: 12px;
 }
 
+.about-card ul {
+  padding-left: 20px;
+  margin-top: 12px;
+  color: #e0e0e0;
+  line-height: 1.7;
+}
+
+.about-card li {
+  margin-bottom: 8px;
+}
+
+/* Card "Hoje" em largura total */
+.full-width-card {
+  grid-column: 1 / -1; /* ocupa todas as colunas */
+  margin-bottom: 32px;
+}
+
+/* Responsividade: em telas menores, empilha os cards */
+@media (max-width: 900px) {
+  .cards-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .full-width-card {
+    grid-column: auto;
+  }
+}
+
+/* Botão CTA */
 .about-footer {
   text-align: center;
-  margin-top: 2rem;
+  margin-top: 16px;
 }
-.button-native{
-  box-shadow: none;
+
+.cta-button {
+  --color: #4da6ff;
+  --border-color: #4da6ff;
+  --border-radius: 12px;
+  --padding-start: 28px;
+  --padding-end: 28px;
+  --font-weight: 600;
+  --background: transparent;
+}
+
+.cta-button:hover {
+  --background: rgba(77, 166, 255, 0.1);
 }
