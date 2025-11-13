@@ -21,8 +21,14 @@ export class HomePage implements OnInit {
 
   async ngOnInit() {
     this.loading = true;
-    this.products = await firstValueFrom(this.productService.getProducts());
-    this.loading = false;
+    try {
+      this.products = await firstValueFrom(this.productService.getProducts());
+    } catch (error) {
+      console.error('Erro ao carregar produtos', error);
+      // Aqui você poderia adicionar um Toast de erro para o usuário
+    } finally {
+      this.loading = false;
+    }
   }
 
   imageFor(p: any) {
@@ -34,4 +40,34 @@ export class HomePage implements OnInit {
     if ((p as any).image) return (p as any).image;
     return 'assets/placeholder.png';
   }
+
+  // --- MÉTODOS ADICIONADOS PARA CONTROLE DE VÍDEO ---
+
+  /**
+   * Inicia a reprodução de um elemento de vídeo.
+   * @param video O elemento HTMLVideoElement a ser reproduzido.
+   */
+  playVideo(video: HTMLVideoElement) {
+    // Garante que o vídeo está mudo (necessário para autoplay)
+    video.muted = true; 
+    
+    const playPromise = video.play();
+
+    if (playPromise !== undefined) {
+      playPromise.catch(error => {
+        // Log de aviso caso o navegador bloqueie o autoplay
+        console.warn('Autoplay do vídeo foi prevenido:', error);
+      });
+    }
+  }
+
+  /**
+   * Pausa o vídeo e reseta seu tempo para o início.
+   * @param video O elemento HTMLVideoElement a ser parado.
+   */
+  stopVideo(video: HTMLVideoElement) {
+    video.pause();
+    video.currentTime = 0; // Faz o vídeo voltar para o começo
+  }
 }
+
