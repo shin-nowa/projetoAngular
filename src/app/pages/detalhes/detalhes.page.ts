@@ -13,11 +13,11 @@ import {
   IonCardSubtitle,
   IonCardContent,
   IonText,
-  IonImg,
-} from '@ionic/angular/standalone';
+  IonImg, IonBackButton } from '@ionic/angular/standalone';
 import { ActivatedRoute } from '@angular/router';
 import { ProductService } from '../../services/product.service';
 import { PriceColorDirective } from 'src/app/diretivas/price-color.directive';
+import { RatingStarsPipe } from 'src/app/pipes/rating-stars-pipe';
 
 interface Product {
   id: number;
@@ -26,14 +26,17 @@ interface Product {
   description: string;
   category: string;
   image: string;
+  rating: {
+    rate: number;
+    count: number;
+  }
 }
-
 @Component({
   selector: 'app-detalhes',
   templateUrl: './detalhes.page.html',
   styleUrls: ['./detalhes.page.scss'],
   standalone: true,
-  imports: [
+  imports: [IonBackButton,
     IonContent,
     IonHeader,
     IonTitle,
@@ -44,12 +47,10 @@ interface Product {
     IonCardTitle,
     IonCardSubtitle,
     IonCardContent,
-    IonText,
     IonImg,
     CommonModule,
     FormsModule,
-    PriceColorDirective,
-  ],
+    PriceColorDirective, RatingStarsPipe],
 })
 export class DetalhesPage implements OnInit {
   product?: Product;

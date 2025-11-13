@@ -1,39 +1,37 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>Detalhes do Produto</ion-title>
+    <ion-back-button slot="start" defaultHref="/products"></ion-back-button>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <div class="ion-padding">
-    @if (loading) {
-    <div class="ion-text-center">
-      <ion-spinner></ion-spinner>
-      <p>Carregando produto...</p>
-    </div>
-    } @if (error) {
-    <div class="ion-text-center ion-color-danger">
-      <p>{{ error }}</p>
-    </div>
-    } @if (product) {
-    <ion-card>
-      <ion-img [src]="product.image" alt="{{ product.title }}"></ion-img>
-      <ion-card-header>
-        <ion-card-title>{{ product.title }}</ion-card-title>
-        <ion-card-subtitle>{{ product.category }}</ion-card-subtitle>
-      </ion-card-header>
-      <ion-card-content>
-        <p>{{ product.description }}</p>
-        <ion-text color="primary">
-          <h2>
-            Preço:
-            <span [appPriceColor]="product.price" color="primary"
-              >R$ {{ product.price }}</span
-            >
-          </h2>
-        </ion-text>
-      </ion-card-content>
-    </ion-card>
+    @if (product) {
+      <ion-card class="detalhes-card">
+        <ion-img [src]="product.image" alt="{{ product.title }}"></ion-img>
+        <ion-card-header>
+          <ion-card-title>{{ product.title }}</ion-card-title>
+          <ion-card-subtitle>{{ product.category | titlecase }}</ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+          <p class="description">{{ product.description }}</p>
+          <p class = 'rating'>{{ product.rating.rate | ratingStars }}</p>
+          <div class="price-section">
+            <span [appPriceColor]="product.price" color="primary">
+              R$ {{ product.price | number: '1.2-2' }}
+            </span>
+          </div>
+        </ion-card-content>
+      </ion-card>
+    } @else if (loading) {
+      <div class="ion-text-center">
+        <ion-spinner></ion-spinner>
+      </div>
+    } @else if (error) {
+      <div class="ion-text-center ion-color-danger">
+        <p>{{ error }}</p>
+      </div>
     }
   </div>
 </ion-content>

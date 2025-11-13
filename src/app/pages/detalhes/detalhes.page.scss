@@ -1,0 +1,46 @@
+ion-card-title{
+  color: var(--texto-escuro)
+}
+ion-card-subtitle{
+  color: var(--texto-escuro)
+}
+.detalhes-card {
+  margin: 16px auto;
+  max-width: 700px;
+}
+
+.detalhes-card ion-img {
+  width: 100%;
+  max-width: 400px;
+  object-fit: contain;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 16px;
+  border-bottom: 1px solid #eee;
+  align-items: center;
+}
+
+.detalhes-card .description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 24px;
+}
+.rating{
+  font-size: 1.6rem;
+}
+.detalhes-card .price-section {
+  text-align: center;
+  padding: 16px;
+  border-radius: 8px;
+  
+  background: var(--cor-fundo-claro);
+  border: 1px solid var(--cor-primaria);
+}
+
+.detalhes-card .price-section span {
+  font-size: 2.2rem;
+  font-weight: 700;
+  
+  color: var(--cor-primaria);
+}
