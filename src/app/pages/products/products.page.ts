@@ -28,7 +28,6 @@ interface Product {
     CommonModule,
     IonicModule,
     RouterLink,
-    LoopOfDirective,
     HighlightCardDirective,
     PriceColorDirective,
     RatingStarsPipe
