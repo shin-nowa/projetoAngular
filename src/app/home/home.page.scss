@@ -12,11 +12,11 @@
 
 .hero h1 {
   font-size: 2.2rem;
-  color: #0059ff;
+  color: var(--cor-primaria);
 }
 
 .hero span {
-  color: #00b7ff;
+  color: var(--cor-destaque);
 }
 
 .features {

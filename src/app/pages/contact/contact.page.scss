@@ -19,7 +19,7 @@
 .contact-header h1 {
   font-size: 2.2rem;
   margin-bottom: 12px;
-  color: #4da6ff; // Azul primário
+  color: var(--cor-primaria); // Azul primário
 }
 
 .contact-header h1 span {
@@ -60,7 +60,7 @@
 .contact-info-card ion-card-title,
 .contact-form-card ion-card-title {
   font-size: 1.4rem;
-  color: #4da6ff;
+  color: var(--cor-secundaria);
   padding: 8px;
 }
 
@@ -108,8 +108,8 @@
 
 .submit-button {
   margin-top: 1rem;
-  --background: #4da6ff;
-  --background-activated: #5aaeff;
+  --background: var(--cor-destaque);
+  --background-activated: var(--cor-destaque);
   --border-radius: 12px;
   --color: #121212;
   font-weight: 600;

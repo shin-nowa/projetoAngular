@@ -29,7 +29,7 @@
           <ion-card-content [appPriceColor]="product.price" color="primary">
             <p class="price">R$ {{ product.price | number: '1.2-2' }}</p>
             <p class = 'rating'>{{ product.rating.rate | ratingStars }}</p>
-            <ion-button color="primary" [routerLink]="['/product', product.id]">
+            <ion-button class = 'btn' [routerLink]="['/product', product.id]">
               Ver Detalhes
             </ion-button>
           </ion-card-content>

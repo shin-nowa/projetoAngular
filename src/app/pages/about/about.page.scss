@@ -18,7 +18,7 @@
 .about-header h1 {
   font-size: 2.2rem;
   margin-bottom: 12px;
-  color: #4da6ff;
+  color: var(--cor-primaria);
 }
 
 .about-header h1 span {
@@ -57,7 +57,7 @@
 .about-card h2 {
   font-size: 1.4rem;
   margin-bottom: 16px;
-  color: #4da6ff;
+  color: var(--cor-secundaria)
 }
 
 .about-card p {
@@ -103,8 +103,9 @@
 }
 
 .cta-button {
-  --color: #4da6ff;
-  --border-color: #4da6ff;
+  --color: var(--cor-primaria)
+  --border-color: var(--cor-primaria);
+  border: hidden;
   --border-radius: 12px;
   --padding-start: 28px;
   --padding-end: 28px;

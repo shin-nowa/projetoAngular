@@ -41,11 +41,12 @@
    ===================================== */
 
 :root {
-  --cor-primaria: #004aad;
-  --cor-secundaria: #00b7ff;
+  --cor-primaria: #8d01ff;
+  --cor-secundaria: #d400ff;
   --cor-destaque: #ffd500;
+  --cor-tres: #5f3663;
   --cor-fundo-claro: #f7f9fc;
-  --cor-fundo-escuro: #0a1a2f;
+  --cor-fundo-escuro: #1d0a2f;
   --texto-claro: #ffffff;
   --texto-escuro: #1b1b1b;
   --texto-medio: #e6e6e6;
@@ -92,20 +93,24 @@ ion-title {
 
 .cta-button {
   margin-top: 20px;
-  --background: #0059ff;
+  --background: var(--cor-primaria);
   --color: #ffffff;
-  background-color: #0059ff;
+  background-color: var(--cor-primaria);
   color: #ffffff;
   font-weight: bold;
   border-radius: 10px;
   padding: 12px 22px;
-  transition: 0.3s ease;
+  transition: 0.3s ease;  
+}
+.cta-button:hover {
+  --background: var(--cor-secundaria);
+  background-color: var(--cor-secundaria);
+}
+.btn{
+  border: 15px;
+  --background: var(--cor-tres);
 }
 
-.cta-button:hover {
-  --background: #0047cc;
-  background-color: #0047cc;
-}
 
 /* ===== SOBRE NÓS (ABOUT) ===== */
 .about-content {
@@ -234,7 +239,7 @@ ion-textarea {
 
 /* ===== RODAPÉ ===== */
 ion-footer {
-  background-color: #2c3e50 !important;
+  background-color: var(--cor-fundo-escuro) !important;
   color: #ffffff !important;
   text-align: center;
   padding: 15px;
@@ -247,7 +252,7 @@ ion-footer {
 }
 
 ion-footer ion-toolbar {
-  --background: #2c3e50 !important;
+  --background: var(--cor-fundo-escuro) !important;
   --border-width: 0 !important;
   --border-style: none !important;
   border: none !important;
